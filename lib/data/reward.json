@@ -1,0 +1,58 @@
+[
+    {
+        "image" : "https://s3gw.inet.co.th:8082/smegp-image-1/prod/V1/04072021051153%E0%B8%8B%E0%B8%B1%E0%B8%99%E0%B9%84%E0%B8%A5%E0%B8%99%E0%B8%95%E0%B9%8C%20750.jpg",
+        "name": "น้ำยาล้างจาน",
+        "price" :"45"
+    
+    },
+    {
+        "image" : "https://s3-ap-southeast-1.amazonaws.com/mgt.prod.lionshop/catalog/product/cache/bbdb42092d32416a5120213c1a30c7b9/3/d/3d_pao_win_wash_blue_active_fresh_refill_700ml_2.png",
+        "name": "น้ำยาซักผ้า",
+        "price" :"65"
+    
+    },
+    {
+        "image" : "https://www.sahapat.co.th/product/assets/uploads/img/product/image_th/20190813095316_90FDDFE6-579C-43F5-BFC8-CF5554562F9D.png",
+        "name": "บะหมี่กึ่งสำเร็จรูป",
+        "price" :"6"
+    
+    },
+    {
+        "image" : "https://www.sahapat.co.th/product/assets/uploads/img/product/image_th/20190813094915_6B96ACF8-F477-40CF-9769-F3AE62500B29.png",
+        "name": "บะหมี่กึ่งสำเร็จรูป",
+        "price" :"15"
+    
+    }
+    ,
+    {
+        "image" : "https://www.sahapat.co.th/product/assets/uploads/img/product/image_th/20200925084315_D2F398AE-E7E6-4FFB-BF57-49DD516F7981.png",
+        "name": "บะหมี่กึ่งสำเร็จรูป",
+        "price" :"15"
+    
+    },
+    {
+        "image" : "https://www.sahapat.co.th/product/assets/uploads/img/product/image_th/20190813094824_1B3F8608-737A-42E3-94AE-5BF709EB1ECE.png",
+        "name": "บะหมี่กึ่งสำเร็จรูป",
+        "price" :"15"
+    
+    },
+    {
+        "image" : "https://www.sahapat.co.th/product/assets/uploads/img/product/image_th/20190813100125_02FBAC5F-6D07-4515-82BB-70F823E52AD9.png",
+        "name": "ข้าวต้มคัพ",
+        "price" :"15"
+    
+    },
+    {
+        "image" : "https://www.sahapat.co.th/product/assets/uploads/img/product/image_th/20190813100158_EDA4320A-ED62-4521-8BD8-BAEBD19E5B51.png",
+        "name": "ข้าวต้มคัพ",
+        "price" :"15"
+    
+    },
+    {
+        "image" : "https://www.sahapat.co.th/product/assets/uploads/img/product/image_th/20190813100052_E75914D5-632B-40B8-9E17-963117592310.png",
+        "name": "ข้าวต้มคัพ",
+        "price" :"15"
+    
+    }
+
+]
