@@ -16,15 +16,15 @@ class _Course_PageState extends State<Course_Page> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-         width: MediaQuery.of(context).size.width,
-         height: MediaQuery.of(context).size.height,
+        width: MediaQuery.of(context).size.width,
+        height: MediaQuery.of(context).size.height,
         child: Column(
           children: [
             Stack(
               children: <Widget>[
                 Container(
                   width: MediaQuery.of(context).size.width,
-                  // height: 350,
+                  height: 350,
                   child: Image.network(
                     widget.course.imageUrl, //height: 350,
                     fit: BoxFit.cover,
@@ -33,7 +33,7 @@ class _Course_PageState extends State<Course_Page> {
                 Positioned(
                   bottom: 0,
                   child: Container(
-                     height: MediaQuery.of(context).size.height * 0.4,
+                    height: MediaQuery.of(context).size.height * 0.4,
                     width: MediaQuery.of(context).size.width,
                     decoration: BoxDecoration(
                         gradient: LinearGradient(
@@ -77,7 +77,6 @@ class _Course_PageState extends State<Course_Page> {
                             ),
                           ),
                           Container(
-
                             width: MediaQuery.of(context).size.width,
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -133,7 +132,6 @@ class _Course_PageState extends State<Course_Page> {
                 ),
               ],
             ),
-
           ],
         ),
       ),

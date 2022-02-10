@@ -27,7 +27,7 @@ class _LoginScreenState extends State<LoginScreen> {
           alignment: Alignment.center,
           width: 250,
           decoration: kBoxDecorationStyle,
-          height:50.0,
+          height: 50.0,
           child: TextField(
             keyboardType: TextInputType.emailAddress,
             style: TextStyle(
@@ -86,13 +86,14 @@ class _LoginScreenState extends State<LoginScreen> {
     );
   }
 
-
   Widget _buildShowPasswordCheckbox() {
     return Container(
       // alignment: Alignment.center,
       child: Row(
         children: <Widget>[
-          SizedBox(width: 25,),
+          SizedBox(
+            width: 25,
+          ),
           Theme(
             data: ThemeData(unselectedWidgetColor: Colors.grey),
             child: Checkbox(
@@ -106,7 +107,6 @@ class _LoginScreenState extends State<LoginScreen> {
               },
             ),
           ),
-
           Text(
             'Show Password',
             style: kLabelStyle,
@@ -115,21 +115,21 @@ class _LoginScreenState extends State<LoginScreen> {
       ),
     );
   }
+
   Widget _buildLoginBtn() {
     return Container(
       padding: EdgeInsets.symmetric(vertical: 10.0),
       width: 250,
       child: RaisedButton(
         elevation: 1.0,
-        onPressed: ()  {
+        onPressed: () {
           print('Login Button Pressed');
-          Navigator.push(context,
-          CupertinoPageRoute(builder: (context) {
-                  return User();
-                },
-              )
-            );
-          },
+          Navigator.push(context, CupertinoPageRoute(
+            builder: (context) {
+              return User();
+            },
+          ));
+        },
         padding: EdgeInsets.all(15.0),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(30.0),
@@ -153,67 +153,66 @@ class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      
       body: AnnotatedRegion<SystemUiOverlayStyle>(
         value: SystemUiOverlayStyle.light,
         child: GestureDetector(
           onTap: () => FocusScope.of(context).unfocus(),
-          child:
-            Stack(
-              children: <Widget>[
-                Container(
-                  height: double.infinity,
-                  width: double.infinity,
-                  decoration: BoxDecoration(
-                    gradient: LinearGradient(
-                      begin: Alignment.topCenter,
-                      end: Alignment.bottomCenter,
-                      colors: [
-                        Color(0xFFE0E0E0),
-                        Color(0xC4EFEFEF),
-                        Color(0xFFE0E0E2),
-                        Color(0xFFE0E0E3),
-                      ],
-                      stops: [0.1, 0.4, 0.7, 0.9],
-                    ),
+          child: Stack(
+            children: <Widget>[
+              Container(
+                height: double.infinity,
+                width: double.infinity,
+                decoration: BoxDecoration(
+                  gradient: LinearGradient(
+                    begin: Alignment.topCenter,
+                    end: Alignment.bottomCenter,
+                    colors: [
+                      Color(0xFFE0E0E0),
+                      Color(0xC4EFEFEF),
+                      Color(0xFFE0E0E2),
+                      Color(0xFFE0E0E3),
+                    ],
+                    stops: [0.1, 0.4, 0.7, 0.9],
                   ),
                 ),
-                Container(
-                  
-                 
-                  // child: SingleChildScrollView(
-                  //   physics: AlwaysScrollableScrollPhysics(),
-                  //   padding: EdgeInsets.symmetric(
-                  //     horizontal: 40.0,
-                  //     vertical: 120.0,
-                  //   ),
+              ),
+              Container(
+                // child: SingleChildScrollView(
+                //   physics: AlwaysScrollableScrollPhysics(),
+                //   padding: EdgeInsets.symmetric(
+                //     horizontal: 40.0,
+                //     vertical: 120.0,
+                //   ),
 
-                    child:  Row(
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Column(
                       mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Column (
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: <Widget>[
-                            Image (
-                              image : AssetImage("assets/images/logo.png"),
-                               height: 200,
-                            ),
-                            _buildEmailTF(),
-                            SizedBox(height: 10.0,),
-                            _buildPasswordTF(),
-
-                             SizedBox(height:20.0,),
-                            // _buildShowPasswordCheckbox(),
-                            _buildLoginBtn(),
-
-                          ],
+                      children: <Widget>[
+                        Image(
+                          image: AssetImage("assets/images/logo.png"),
+                          height: 190,
                         ),
+                        _buildEmailTF(),
+                        SizedBox(
+                          height: 10.0,
+                        ),
+                        _buildPasswordTF(),
+
+                        SizedBox(
+                          height: 20.0,
+                        ),
+                        // _buildShowPasswordCheckbox(),
+                        _buildLoginBtn(),
                       ],
                     ),
-                  ),
-                // )
-              ],
-            ),
+                  ],
+                ),
+              ),
+              // )
+            ],
+          ),
         ),
       ),
     );
