@@ -30,19 +30,20 @@ class _Course_PageState extends State<Course_Page> {
     _currentStep > 0 ? setState(() => _currentStep -= 1) : null;
   }
 
+  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        width: MediaQuery.of(context).size.width,
-        height: MediaQuery.of(context).size.height,
+         width: MediaQuery.of(context).size.width,
+         height: MediaQuery.of(context).size.height,
         child: Column(
           children: [
             Stack(
               children: <Widget>[
                 Container(
                   width: MediaQuery.of(context).size.width,
-                  height: 350,
+                   height: 350,
                   child: Image.network(
                     widget.course.imageUrl, //height: 350,
                     fit: BoxFit.cover,
@@ -51,7 +52,7 @@ class _Course_PageState extends State<Course_Page> {
                 Positioned(
                   bottom: 0,
                   child: Container(
-                    height: MediaQuery.of(context).size.height * 0.4,
+                     height: MediaQuery.of(context).size.height * 0.4,
                     width: MediaQuery.of(context).size.width,
                     decoration: BoxDecoration(
                         gradient: LinearGradient(
@@ -95,6 +96,7 @@ class _Course_PageState extends State<Course_Page> {
                             ),
                           ),
                           Container(
+
                             width: MediaQuery.of(context).size.width,
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -150,6 +152,90 @@ class _Course_PageState extends State<Course_Page> {
                 ),
               ],
             ),
+          Expanded(
+            child: Stepper(
+              type: _isVerticalStepper
+                  ? StepperType.vertical
+                  : StepperType.horizontal,
+              physics: const ScrollPhysics(),
+              currentStep: _currentStep,
+              onStepTapped: (step) => _stepTapped(step),
+              onStepContinue: _stepContinue,
+              onStepCancel: _stepCancel,
+              steps: [
+                // The first step: Name
+                Step(
+                  title:  Text('แบบทดสอบก่อนเรียน',style: GoogleFonts.mitr(fontSize: 15),),
+                  subtitle: const Text('Test'),
+                  content: Column(
+                    children: [
+                      // TextFormField(
+                      //   decoration:
+                      //       const InputDecoration(labelText: 'Your name'),
+                      // ),
+                    ],
+                  ),
+                  isActive: _currentStep >= 0,
+                  state: _currentStep >= 0
+                      ? StepState.complete
+                      : StepState.disabled,
+                ),
+                // The second step: Phone number
+                Step(
+                  title:  Text('หลักสูตรการปฐมพยาบาลเบื้องต้น',style: GoogleFonts.mitr(fontSize: 15),),
+                  subtitle: const Text('Lesson'),
+                  content: Column(
+                    children: [                                       
+                    ],
+                  ),
+                  isActive: _currentStep >= 0,
+                  state: _currentStep >= 1
+                      ? StepState.complete
+                      : StepState.disabled,
+                ),
+                // The third step: Verify phone number
+                Step(
+                  title:  Text('แบบทดสอบหลังเรียน',style: GoogleFonts.mitr(fontSize: 15),),
+                  subtitle: const Text('Test'),
+                  content: Column(
+                    children: <Widget>[
+                      
+                    ],
+                  ),
+                  isActive: _currentStep >= 0,
+                  state: _currentStep >= 2
+                      ? StepState.complete
+                      : StepState.disabled,
+                ),
+               Step(
+                  title:  Text('แบบทดสอบหลังเรียน',style: GoogleFonts.mitr(fontSize: 15),),
+                  subtitle: const Text('Test'),
+                  content: Column(
+                    children: <Widget>[
+                      
+                    ],
+                  ),
+                  isActive: _currentStep >= 0,
+                  state: _currentStep >= 2
+                      ? StepState.complete
+                      : StepState.disabled,
+                ),
+                Step(
+                  title:  Text('แบบทดสอบหลังเรียน',style: GoogleFonts.mitr(fontSize: 15),),
+                  subtitle: const Text('Test'),
+                  content: Column(
+                    children: <Widget>[
+                      
+                    ],
+                  ),
+                  isActive: _currentStep >= 0,
+                  state: _currentStep >= 2
+                      ? StepState.complete
+                      : StepState.disabled,
+                ),
+              ],
+              )
+            )
           ],
         ),
       ),
