@@ -15,6 +15,7 @@ class _Course_PageState extends State<Course_Page> {
    int _currentStep = 0;
    bool _isVerticalStepper = true;
    
+   
  _stepTapped(int step) {
     setState(() => _currentStep = step);
   }
