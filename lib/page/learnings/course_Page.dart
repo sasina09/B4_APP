@@ -12,6 +12,23 @@ class Course_Page extends StatefulWidget {
 }
 
 class _Course_PageState extends State<Course_Page> {
+  int _currentStep = 0;
+  bool _isVerticalStepper = true;
+
+  _stepTapped(int step) {
+    setState(() => _currentStep = step);
+  }
+
+  // This function will be called when the continue button is tapped
+  _stepContinue() {
+    _currentStep < 4 ? setState(() => _currentStep += 1) : null;
+  }
+
+  // This function will be called when the cancel button is tapped
+  _stepCancel() {
+    _currentStep > 0 ? setState(() => _currentStep -= 1) : null;
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
