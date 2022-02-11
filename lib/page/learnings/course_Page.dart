@@ -12,11 +12,10 @@ class Course_Page extends StatefulWidget {
 }
 
 class _Course_PageState extends State<Course_Page> {
-   int _currentStep = 0;
-   bool _isVerticalStepper = true;
-   
-   
- _stepTapped(int step) {
+  int _currentStep = 0;
+  bool _isVerticalStepper = true;
+
+  _stepTapped(int step) {
     setState(() => _currentStep = step);
   }
 
@@ -30,20 +29,19 @@ class _Course_PageState extends State<Course_Page> {
     _currentStep > 0 ? setState(() => _currentStep -= 1) : null;
   }
 
-  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-         width: MediaQuery.of(context).size.width,
-         height: MediaQuery.of(context).size.height,
+        width: MediaQuery.of(context).size.width,
+        height: MediaQuery.of(context).size.height,
         child: Column(
           children: [
             Stack(
               children: <Widget>[
                 Container(
                   width: MediaQuery.of(context).size.width,
-                   height: 350,
+                  height: 350,
                   child: Image.network(
                     widget.course.imageUrl, //height: 350,
                     fit: BoxFit.cover,
@@ -52,7 +50,7 @@ class _Course_PageState extends State<Course_Page> {
                 Positioned(
                   bottom: 0,
                   child: Container(
-                     height: MediaQuery.of(context).size.height * 0.4,
+                    height: MediaQuery.of(context).size.height * 0.4,
                     width: MediaQuery.of(context).size.width,
                     decoration: BoxDecoration(
                         gradient: LinearGradient(
@@ -96,7 +94,6 @@ class _Course_PageState extends State<Course_Page> {
                             ),
                           ),
                           Container(
-
                             width: MediaQuery.of(context).size.width,
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -152,8 +149,8 @@ class _Course_PageState extends State<Course_Page> {
                 ),
               ],
             ),
-          Expanded(
-            child: Stepper(
+            Expanded(
+                child: Stepper(
               type: _isVerticalStepper
                   ? StepperType.vertical
                   : StepperType.horizontal,
@@ -165,7 +162,10 @@ class _Course_PageState extends State<Course_Page> {
               steps: [
                 // The first step: Name
                 Step(
-                  title:  Text('แบบทดสอบก่อนเรียน',style: GoogleFonts.mitr(fontSize: 15),),
+                  title: Text(
+                    'แบบทดสอบก่อนเรียน',
+                    style: GoogleFonts.mitr(fontSize: 15),
+                  ),
                   subtitle: const Text('Test'),
                   content: Column(
                     children: [
@@ -182,11 +182,13 @@ class _Course_PageState extends State<Course_Page> {
                 ),
                 // The second step: Phone number
                 Step(
-                  title:  Text('หลักสูตรการปฐมพยาบาลเบื้องต้น',style: GoogleFonts.mitr(fontSize: 15),),
+                  title: Text(
+                    'หลักสูตรการปฐมพยาบาลเบื้องต้น',
+                    style: GoogleFonts.mitr(fontSize: 15),
+                  ),
                   subtitle: const Text('Lesson'),
                   content: Column(
-                    children: [                                       
-                    ],
+                    children: [],
                   ),
                   isActive: _currentStep >= 0,
                   state: _currentStep >= 1
@@ -195,25 +197,13 @@ class _Course_PageState extends State<Course_Page> {
                 ),
                 // The third step: Verify phone number
                 Step(
-                  title:  Text('แบบทดสอบหลังเรียน',style: GoogleFonts.mitr(fontSize: 15),),
-                  subtitle: const Text('Test'),
-                  content: Column(
-                    children: <Widget>[
-                      
-                    ],
+                  title: Text(
+                    'แบบทดสอบหลังเรียน',
+                    style: GoogleFonts.mitr(fontSize: 15),
                   ),
-                  isActive: _currentStep >= 0,
-                  state: _currentStep >= 2
-                      ? StepState.complete
-                      : StepState.disabled,
-                ),
-               Step(
-                  title:  Text('บทเรียนที่ 1',style: GoogleFonts.mitr(fontSize: 15),),
                   subtitle: const Text('Test'),
                   content: Column(
-                    children: <Widget>[
-                      
-                    ],
+                    children: <Widget>[],
                   ),
                   isActive: _currentStep >= 0,
                   state: _currentStep >= 2
@@ -221,12 +211,27 @@ class _Course_PageState extends State<Course_Page> {
                       : StepState.disabled,
                 ),
                 Step(
-                  title:  Text('แบบทดสอบหลังเรียน',style: GoogleFonts.mitr(fontSize: 15),),
+                  title: Text(
+                    'บทเรียนที่ 1',
+                    style: GoogleFonts.mitr(fontSize: 15),
+                  ),
                   subtitle: const Text('Test'),
                   content: Column(
-                    children: <Widget>[
-                      
-                    ],
+                    children: <Widget>[],
+                  ),
+                  isActive: _currentStep >= 0,
+                  state: _currentStep >= 2
+                      ? StepState.complete
+                      : StepState.disabled,
+                ),
+                Step(
+                  title: Text(
+                    'แบบทดสอบหลังเรียน',
+                    style: GoogleFonts.mitr(fontSize: 15),
+                  ),
+                  subtitle: const Text('Test'),
+                  content: Column(
+                    children: <Widget>[],
                   ),
                   isActive: _currentStep >= 0,
                   state: _currentStep >= 2
@@ -234,8 +239,7 @@ class _Course_PageState extends State<Course_Page> {
                       : StepState.disabled,
                 ),
               ],
-              )
-            )
+            ))
           ],
         ),
       ),
