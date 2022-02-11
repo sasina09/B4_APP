@@ -54,6 +54,13 @@ class _Reward_PageState extends State<Reward_Page> {
                     // mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
+                      InkWell(
+                        onTap: () => Navigator.pop(context),
+                        child: Container(
+                          alignment: Alignment.topRight,
+                            child: Icon(Icons.close),
+                        ),
+                      ),
                       Padding(
                         padding: const EdgeInsets.only(bottom: 15),
                         child: Image.network(

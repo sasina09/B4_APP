@@ -72,6 +72,7 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
       - lib/data/announcement.json
+      - lib/data/depart_coin.json
       - lib/data/course.json
       - lib/data/survey.json
       - lib/data/reward.json

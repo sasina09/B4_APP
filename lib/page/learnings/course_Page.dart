@@ -211,6 +211,7 @@ class _Course_PageState extends State<Course_Page> {
                       : StepState.disabled,
                 ),
                 Step(
+                  
                   title: Text(
                     'บทเรียนที่ 1',
                     style: GoogleFonts.mitr(fontSize: 15),
