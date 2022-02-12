@@ -3,6 +3,8 @@ import 'package:b4together/model/LearningMD/courseModel.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import 'package:b4together/page/learnings/detailcourse_Page.dart';
+
 class Course_Page extends StatefulWidget {
   final Course course;
 
@@ -16,12 +18,19 @@ class _Course_PageState extends State<Course_Page> {
   bool _isVerticalStepper = true;
 
   _stepTapped(int step) {
-    setState(() => _currentStep = step);
+
+    // setState(() => _currentStep = step);
   }
 
   // This function will be called when the continue button is tapped
   _stepContinue() {
-    _currentStep < 4 ? setState(() => _currentStep += 1) : null;
+        Navigator.push(context,
+      MaterialPageRoute(
+        builder: (context) => Detail_course_Page()
+      )
+      );
+    //  Navigator.push(context, route)
+     _currentStep < 4 ? setState(() => _currentStep += 1) : null;
   }
 
   // This function will be called when the cancel button is tapped
@@ -150,96 +159,95 @@ class _Course_PageState extends State<Course_Page> {
               ],
             ),
             Expanded(
-                child: Stepper(
-              type: _isVerticalStepper
-                  ? StepperType.vertical
-                  : StepperType.horizontal,
-              physics: const ScrollPhysics(),
-              currentStep: _currentStep,
-              onStepTapped: (step) => _stepTapped(step),
-              onStepContinue: _stepContinue,
-              onStepCancel: _stepCancel,
-              steps: [
-                // The first step: Name
-                Step(
-                  title: Text(
-                    'แบบทดสอบก่อนเรียน',
-                    style: GoogleFonts.mitr(fontSize: 15),
+                child: Theme(
+              data: ThemeData(canvasColor: Colors.green[900]),
+              child: Stepper(
+                type: _isVerticalStepper
+                    ? StepperType.vertical
+                    : StepperType.horizontal,
+                physics: const ScrollPhysics(),
+                currentStep: _currentStep,
+                onStepTapped: (step) => _stepTapped(step),
+                onStepContinue: _stepContinue,
+                onStepCancel: _stepCancel,
+                steps: [
+                  // The first step: Name
+                  Step(
+                    title: Text(
+                      'แบบทดสอบก่อนเรียน',
+                      style: GoogleFonts.mitr(fontSize: 15),
+                    ),
+                    subtitle: const Text('Test'),
+                    content: Column(
+                      children: [
+
+                      ],
+                    ),
+                    isActive: _currentStep >= 0,
+                    state: _currentStep >= 0
+                        ? StepState.complete
+                        : StepState.editing,
                   ),
-                  subtitle: const Text('Test'),
-                  content: Column(
-                    children: [
-                      // TextFormField(
-                      //   decoration:
-                      //       const InputDecoration(labelText: 'Your name'),
-                      // ),
-                    ],
+
+                  Step(
+                    title: Text(
+                      'หลักสูตรการปฐมพยาบาลเบื้องต้น',
+                      style: GoogleFonts.mitr(fontSize: 15),
+                    ),
+                    subtitle: const Text('Lesson'),
+                    content: Column(
+                      children: [],
+                    ),
+                    isActive: _currentStep >= 0,
+                    state: _currentStep >= 1
+                        ? StepState.complete
+                        : StepState.editing,
                   ),
-                  isActive: _currentStep >= 0,
-                  state: _currentStep >= 0
-                      ? StepState.complete
-                      : StepState.disabled,
-                ),
-                // The second step: Phone number
-                Step(
-                  title: Text(
-                    'หลักสูตรการปฐมพยาบาลเบื้องต้น',
-                    style: GoogleFonts.mitr(fontSize: 15),
+
+                  Step(
+                    title: Text(
+                      'แบบทดสอบหลังเรียน',
+                      style: GoogleFonts.mitr(fontSize: 15),
+                    ),
+                    subtitle: const Text('Test'),
+                    content: Column(
+                      children: <Widget>[],
+                    ),
+                    isActive: _currentStep >= 0,
+                    state: _currentStep >= 2
+                        ? StepState.complete
+                        : StepState.editing,
                   ),
-                  subtitle: const Text('Lesson'),
-                  content: Column(
-                    children: [],
+                  Step(
+                    title: Text(
+                      'บทเรียนที่ 1',
+                      style: GoogleFonts.mitr(fontSize: 15),
+                    ),
+                    subtitle: const Text('Test'),
+                    content: Column(
+                      children: <Widget>[],
+                    ),
+                    isActive: _currentStep >= 0,
+                    state: _currentStep >= 2
+                        ? StepState.complete
+                        : StepState.editing,
                   ),
-                  isActive: _currentStep >= 0,
-                  state: _currentStep >= 1
-                      ? StepState.complete
-                      : StepState.disabled,
-                ),
-                // The third step: Verify phone number
-                Step(
-                  title: Text(
-                    'แบบทดสอบหลังเรียน',
-                    style: GoogleFonts.mitr(fontSize: 15),
+                  Step(
+                    title: Text(
+                      'แบบทดสอบหลังเรียน',
+                      style: GoogleFonts.mitr(fontSize: 15),
+                    ),
+                    subtitle: const Text('Test'),
+                    content: Column(
+                      children: <Widget>[],
+                    ),
+                    isActive: _currentStep >= 0,
+                    state: _currentStep >= 2
+                        ? StepState.complete
+                        : StepState.editing,
                   ),
-                  subtitle: const Text('Test'),
-                  content: Column(
-                    children: <Widget>[],
-                  ),
-                  isActive: _currentStep >= 0,
-                  state: _currentStep >= 2
-                      ? StepState.complete
-                      : StepState.disabled,
-                ),
-                Step(
-                  
-                  title: Text(
-                    'บทเรียนที่ 1',
-                    style: GoogleFonts.mitr(fontSize: 15),
-                  ),
-                  subtitle: const Text('Test'),
-                  content: Column(
-                    children: <Widget>[],
-                  ),
-                  isActive: _currentStep >= 0,
-                  state: _currentStep >= 2
-                      ? StepState.complete
-                      : StepState.disabled,
-                ),
-                Step(
-                  title: Text(
-                    'แบบทดสอบหลังเรียน',
-                    style: GoogleFonts.mitr(fontSize: 15),
-                  ),
-                  subtitle: const Text('Test'),
-                  content: Column(
-                    children: <Widget>[],
-                  ),
-                  isActive: _currentStep >= 0,
-                  state: _currentStep >= 2
-                      ? StepState.complete
-                      : StepState.disabled,
-                ),
-              ],
+                ],
+              ),
             ))
           ],
         ),
