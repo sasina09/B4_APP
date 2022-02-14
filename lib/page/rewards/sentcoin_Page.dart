@@ -83,10 +83,6 @@ class _SentcoinState extends State<Sentcoin> {
   Future<void> readJson() async {
     String response = await rootBundle.loadString('lib/data/depart_coin.json');
     departmentdata = departmentFromJson(response);
-    
-
-    
-    // ... 
 }
 
   @override

@@ -1,6 +1,7 @@
 import 'package:b4together/page/rewards/primarycolor.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:syncfusion_flutter_pdf/pdf.dart';
 import 'package:syncfusion_flutter_pdfviewer/pdfviewer.dart';
 
@@ -58,10 +59,13 @@ class _Detail_course_PageState extends State<Detail_course_Page> {
                     width: MediaQuery.of(context).size.width * 0.7,
                     child: ElevatedButton(
                       style: ElevatedButton.styleFrom(
-                        primary : Colors.amber
+                        primary : kPrimaryColor
+
                         ),
-                      onPressed: () { },
-                      child: Text('จบบทเรียน'),
+                      onPressed: () { Navigator.pop(context);},
+                      child: Text('จบบทเรียน',
+                        style: GoogleFonts.mitr(color: Colors.white),
+                      ),
                     ),
                   )) 
                 : Container(),
