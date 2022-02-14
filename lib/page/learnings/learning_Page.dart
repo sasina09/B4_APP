@@ -18,11 +18,7 @@ class Learning extends StatefulWidget {
 class _LearningState extends State<Learning> {
   List<Course> _items = [];
 
-    static List<String> StatusLearning = [
-    "Learning",
-    "Not Started",
-    "Successed"
-  ];
+  static List<String> StatusLearning = ["Learning", "Not Started", "Successed"];
   List<String> newListStatus = List.from(StatusLearning);
 
   bool _folded = true; // serchAnimation
@@ -44,28 +40,19 @@ class _LearningState extends State<Learning> {
   }
 
   cardDialog() {
-
     return showDialog(
-      context: context, 
-      builder: (BuildContext context){
-        return StatefulBuilder(
-          builder: (BuildContext context, StateSetter setState){
+        context: context,
+        builder: (BuildContext context) {
+          return StatefulBuilder(
+              builder: (BuildContext context, StateSetter setState) {
             return Dialog(
               shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(10.0)
-              ),
-            child: Container(
-              height: 100,
-              child: Text('ohhhhhhhh')),
+                  borderRadius: BorderRadius.circular(10.0)),
+              child: Container(height: 100, child: Text('ohhhhhhhh')),
             );
-          }
-          );
-      }
-    );
-  } 
-
-
-
+          });
+        });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -105,8 +92,10 @@ class _LearningState extends State<Learning> {
                                       ? TextField(
                                           decoration: InputDecoration(
                                               hintText: "ค้นหาคอร์สเรียน",
-                                              // hintStyle:
+                                              hintStyle: GoogleFonts.mitr(
+                                                  fontSize: 18),
                                               border: InputBorder.none),
+                                          autofocus: true,
                                         )
                                       : null)),
                           AnimatedContainer(
@@ -293,4 +282,3 @@ class _LearningState extends State<Learning> {
     ));
   }
 }
-
