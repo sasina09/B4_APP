@@ -17,6 +17,8 @@ class _Course_PageState extends State<Course_Page> {
   int _currentStep = 0;
   bool _isVerticalStepper = true;
 
+
+
   _stepTapped(int step) {
 
     // setState(() => _currentStep = step);
@@ -24,11 +26,9 @@ class _Course_PageState extends State<Course_Page> {
 
   // This function will be called when the continue button is tapped
   _stepContinue() {
-        Navigator.push(context,
-      MaterialPageRoute(
-        builder: (context) => Detail_course_Page()
-      )
-      );
+        Navigator.push(context,MaterialPageRoute(
+          builder: (context) => Detail_course_Page()),).then((v) => setState(() {})
+        );
     //  Navigator.push(context, route)
      _currentStep < 4 ? setState(() => _currentStep += 1) : null;
   }
@@ -40,6 +40,7 @@ class _Course_PageState extends State<Course_Page> {
 
   @override
   Widget build(BuildContext context) {
+    print("object");
     return Scaffold(
       body: Container(
         width: MediaQuery.of(context).size.width,
@@ -255,3 +256,4 @@ class _Course_PageState extends State<Course_Page> {
     );
   }
 }
+
